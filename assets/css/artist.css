@@ -71,16 +71,14 @@ nav i {
   vertical-align: middle;
   font-size: 1.4rem;
 }
+.nav-link {
+  font-size: 13px;
+}
 
 #play-bar {
-  height: 139px;
+  height: 90px;
   background-color: rgb(19, 19, 19);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 55%,
-    rgba(49, 36, 36, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
 }
 
 i {
