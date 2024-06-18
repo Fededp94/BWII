@@ -10,52 +10,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./assets/css/home_style.css" />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <style>
-      .list-group-item {
-        display: flex;
-        align-items: center;
-      }
-      .list-group-item img {
-        filter: invert(1);
-      }
-      .scrollable-block {
-        max-height: 49vh;
-        overflow-y: auto;
-      }
-      .side-title {
-        display: flex;
-        justify-content: space-between;
-
-        .icon {
-          display: flex;
-        }
-      }
-
-      /* AGGIUNTO */
-
-      .custom_bg {
-        background: linear-gradient(11deg, black, transparent, transparent);
-      }
-
-      /* UTILITIES */
-
-      .small_txt {
-        font-size: x-small;
-      }
-
-      .bg_two {
-        background-color: #33393f;
-      }
-
-      body {
-        font-family: "Circular";
-      }
-    </style>
   </head>
   <body data-bs-theme="dark">
     <div class="container-fluid">
@@ -270,7 +230,7 @@
           </div>
           <!-- PLAYLIST HOME -->
           <h4 class="d-block my-3">Buonasera</h4>
-          <div class="row row-cols-2 row-cols-md-3 gy-3">
+          <div class="row row-cols-2 row-cols-lg-3 gy-3">
             <div class="d-flex col">
               <img
                 src="./assets/imgs/main/image-18.jpg"
@@ -328,13 +288,14 @@
           </div>
           <div class="d-flex justify-content-between align-items-center my-3">
             <h5>Altro di ciò che ti piace</h5>
-            <p class="small_txt text-muted m-0">VISUALIZZA TUTTO</p>
+            <p class="small_txt text-muted m-0">Mostra tutto</p>
           </div>
 
-          <div class="row row-sm-cols-2 row-lg-cols-5">
+          <div class="row row-cols-2 row-cols-lg-5">
             <!-- CARDS ALTRO -->
+
             <div class="col">
-              <div class="card">
+              <div class="card border-0 bg_two">
                 <img src="./assets/imgs/main/image-1.jpg" style="max-height:
                 150px"" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -346,7 +307,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card">
+              <div class="card border-0 bg_two">
                 <img src="./assets/imgs/main/image-1.jpg" style="max-height:
                 150px"" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -358,7 +319,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card">
+              <div class="card border-0 bg_two">
                 <img src="./assets/imgs/main/image-1.jpg" style="max-height:
                 150px"" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -370,7 +331,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card">
+              <div class="card border-0 bg_two">
                 <img src="./assets/imgs/main/image-1.jpg" style="max-height:
                 150px"" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -382,7 +343,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card">
+              <div class="card border-0 bg_two">
                 <img src="./assets/imgs/main/image-1.jpg" style="max-height:
                 150px"" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -394,6 +355,17 @@
               </div>
             </div>
             <!-- SM/MD None -->
+          </div>
+
+          <!-- I TUOI ARTISTI PREFERITI -->
+
+          <div class="d-flex justify-content-between align-items-center my-3">
+            <h5>I tuoi artisti preferiti</h5>
+            <p class="small_txt text-muted m-0">Mostra tutto</p>
+          </div>
+          <!-- ROW ARTISTI -->
+          <div class="row row-cols-2 row-cols-lg-5">
+            <div class="col"></div>
           </div>
         </div>
 
