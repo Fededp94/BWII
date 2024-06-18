@@ -5,3 +5,9 @@
     color: white;
   }
 }
+
+#mainCenter {
+  overflow-y: scroll;
+  max-height: 55vh;
+  overflow-x: hidden;
+}

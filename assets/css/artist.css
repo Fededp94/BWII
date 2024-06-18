@@ -33,7 +33,7 @@ body {
   background-color: rgb(19, 19, 19);
 }
 .custom-right-side {
-  padding: 0.5em !important;
+  /* padding: 0.5em !important; */
   font-size: 0.8em;
 }
 .siderbarRx .bg-black {
