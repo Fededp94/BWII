@@ -29,10 +29,62 @@ body {
   background: linear-gradient(11deg, black, transparent, transparent);
 }
 
+.playIt {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  color: black;
+  height: 15px;
+  width: 15px;
+}
+
+.card_wrap {
+  padding: 7px;
+  /* background-color: #33393f99; */
+  border-radius: 5px;
+  .image_wrap {
+    position: relative;
+    img {
+      border-radius: 5px;
+    }
+  }
+}
+
+.card_wrap:hover {
+  background-color: #33393f99;
+  .playIt {
+    display: inline;
+  }
+}
+
+footer {
+  ul {
+    padding: 0px;
+
+    li:first-child {
+      color: white;
+    }
+    li {
+      list-style-type: none;
+      color: grey;
+      padding-bottom: 8px;
+    }
+    li:hover {
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
 /* UTILITIES */
 
-.small_txt {
+.xsmall_txt {
   font-size: x-small;
+}
+
+.small_txt {
+  font-size: small;
 }
 
 .bg_two {
