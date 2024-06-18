@@ -1,0 +1,143 @@
+body {
+  background-color: #121212;
+  color: white;
+}
+
+.search-bar {
+  margin-top: 20px;
+}
+.card {
+  background-color: none;
+  border: none;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card-title {
+  color: white;
+}
+.card-text {
+  color: #b3b3b3;
+}
+
+.titolo {
+  text-align: center;
+  color: white;
+  margin-top: 10vh;
+}
+
+/*** BACKGROUND CARDS ***/
+
+.bg-color-1 {
+  background-color: #e13300;
+}
+
+.bg-color-2 {
+  background-color: #1e3264;
+}
+
+.bg-color-3 {
+  background-color: #e8125c;
+}
+
+.bg-color-4 {
+  background-color: #158a08;
+}
+
+.bg-color-5 {
+  background-color: #bc5800;
+}
+
+.bg-color-6 {
+  background-color: #e13300;
+}
+
+.bg-color-7 {
+  background-color: #e1118b;
+}
+
+.bg-color-8 {
+  background-color: #8c67ac;
+}
+
+.bg-color-1,
+.bg-color-2,
+.bg-color-3,
+.bg-color-4,
+.bg-color-5,
+.bg-color-6,
+.bg-color-7,
+.bg-color-8 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+/*** CARDS IMAGES ***/
+
+.rotated-image {
+  transform: rotate(30deg);
+  width: 25vh;
+  max-height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  box-shadow: 20px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/*** TESTO CARDS ***/
+.categorie {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1vh;
+  font-weight: bold;
+  z-index: 3;
+}
+
+/*** ICONA SEARCH ***/
+.search-container {
+  position: relative;
+  width: fit-content;
+  background-color: #333333;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-container input[type="text"] {
+  width: 100%;
+  padding-left: 40px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+
+.search-container input[type="text"]::placeholder {
+  color: white;
+}
+
+.search-container .bi-search {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
