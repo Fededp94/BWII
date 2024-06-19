@@ -17,6 +17,7 @@
   top: 0;
   z-index: 1000;
   background-color: #212b3c;
+  /* #212b3c */
 }
 
 .sticky1 {
@@ -24,26 +25,43 @@
   top: 0;
   z-index: 1001;
   background-color: #283851;
-
   /* padding-bottom: 1rem; */
 }
 
-.barraUtente {
+/* .barraUtente {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* Assicurati che la barra utente sia posizionata relativamente */
-}
+  position: relative;
+} */
 
 .title-album-fixed {
-  display: none; /* Nascondi il titolo fisso inizialmente */
-  position: absolute; /* Posizionamento assoluto all'interno della barra */
-  left: 50%; /* Centrare rispetto alla barra utente */
-  transform: translateX(-50%); /* Centra esattamente */
-  white-space: nowrap; /* Evita a capo nel testo */
-  color: white; /* Assicurati che il colore sia visibile sullo sfondo */
+  display: none;
+  position: absolute;
+  left: 22%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: white;
 }
 
 .title-album-fixed.show {
-  display: block; /* Mostra il titolo quando necessario */
+  display: block;
+}
+
+/* .play-button {
+  font-size: 24px;
+  cursor: pointer; 
+  color: white; 
+}
+
+.play-button.show {
+  display: inline-block; 
+} */
+
+.bi.bi-play-fill {
+  background-color: rgb(77, 205, 77);
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 60px;
+  cursor: pointer;
 }

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function updateAlbumDetails(album) {
   const mainContent = document.getElementById("MainContentAlbum");
-  mainContent.textContent = ""; // Clears the content
+  mainContent.textContent = ""; //pulisce il contenuto
 
   //immagine dell'album
   const imgDiv = document.createElement("div");
@@ -63,6 +63,7 @@ function updateAlbumDetails(album) {
   console.log("l'album è stato agiornato");
 }
 
+// parte layout del titolo (rimane sopra anche se scrollassi giu)
 document.addEventListener("DOMContentLoaded", function () {
   const scrollTarget = document.getElementById("MainContentAlbum");
   const albumTitle = document.querySelector(".title-album").innerHTML;
