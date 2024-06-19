@@ -2,7 +2,13 @@
 const qUrl = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 
 /* Crea Array artisti */
-const artList = ["beatles", "eric+clapton", "beach+boys", "jefferson+airplane"];
+const artList = [
+  "beatles",
+  "eric+clapton",
+  "beach+boys",
+  "jefferson airplane",
+  "pink floyd",
+];
 /* console.log(randomArt); */
 
 const options = {
@@ -43,7 +49,7 @@ window.addEventListener("DOMContentLoaded", function () {
         /*  */
 
         const a_art = document.createElement("a");
-        a_art.href = `./artist.html/${resp.data[1].artist.id}`;
+        a_art.href = `./artist.html?id=${resp.data[1].artist.id}`;
         cardCol.appendChild(a_art);
 
         /*  */
@@ -112,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function () {
         /*  */
 
         const a_album = document.createElement("a");
-        a_album.href = `./album.html/${resp.data[randomNumb].album.id}`;
+        a_album.href = `./album.html?id=${resp.data[randomNumb].album.id}`;
         albCol.appendChild(a_album);
 
         /*  */
@@ -157,7 +163,7 @@ window.addEventListener("DOMContentLoaded", function () {
         card_a.appendChild(cardTitleAlb);
 
         const cardPalb = document.createElement("p");
-        cardPalb.className = "card-text small_txt text-muted";
+        cardPalb.className = "card-text small_txt text-muted text-truncate";
         cardPalb.innerText = resp.data[randomNumb].artist.name;
 
         card_a.appendChild(cardPalb);
