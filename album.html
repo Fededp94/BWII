@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link rel="stylesheet" href="./assets/css/artist.css" />
     <link rel="stylesheet" href="./assets/css/album.css" />
+    <!-- <style>
+      #MainContentAlbum {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 94vh;
+      }
+    </style> -->
   </head>
   <body data-bs-theme="dark">
     <div class="container-fluid">
@@ -147,24 +154,26 @@
 
         <!-- PARTE CENTRALE -->
 
-        <div class="col-12 col-md-9 col-lg-7 text-white MainContent pt-2 pb-5 px-0 bg-primary-subtle bg-gradient" id="MainContentAlbum">
-          <div class="barraUtente d-flex justify-content-between align-items-center">
-            <div class="ps-4">
-              <button class="btn p-1" type="button">
-                <i class="bi bi-arrow-left-circle fs-4 text-secondary"></i></button
-              ><button class="btn p-1" type="button">
-                <i class="bi bi-arrow-right-circle fs-4 text-secondary"></i>
-              </button>
-            </div>
-            <div class="dropdown d-none d-md-block pe-2">
-              <a class="btn rounded-pill bg-black2 py-0 p-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-circle me-1"></i>Team 8
-              </a>
-              <ul class="dropdown-menu bg-black2">
-                <li><a class="dropdown-item" href="#">View profile</a></li>
-                <li><a class="dropdown-item" href="#">Edit profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-              </ul>
+        <div class="col-12 col-md-9 col-lg-7 text-white MainContent pb-5 px-0 bg-primary-subtle bg-gradient" id="MainContentAlbum">
+          <div class="sticky1">
+            <div class="barraUtente d-flex justify-content-between align-items-center">
+              <div class="ps-4">
+                <button class="btn p-1" type="button">
+                  <i class="bi bi-arrow-left-circle fs-4 text-secondary"></i></button
+                ><button class="btn p-1" type="button">
+                  <i class="bi bi-arrow-right-circle fs-4 text-secondary"></i>
+                </button>
+              </div>
+              <div class="dropdown d-none d-md-block pe-2">
+                <a class="btn rounded-pill bg-black2 py-0 p-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle me-1"></i>Team 8
+                </a>
+                <ul class="dropdown-menu bg-black2">
+                  <li><a class="dropdown-item" href="#">View profile</a></li>
+                  <li><a class="dropdown-item" href="#">Edit profile</a></li>
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="d-flex px-3 pt-3">
@@ -173,14 +182,17 @@
             </div>
             <div class="ps-3 pt-4">
               <small>ALBUM</small> <br />
-              <strong class="fs-1 fw-bold">Soul Lounge</strong> <br />
+              <div class="album-title-sticky">
+                <strong class="fs-1 fw-bold title-album">Soul Lounge</strong>
+              </div>
+              <br />
               <div class="d-flex align-items-center pt-4">
                 <img src="./assets/imgs/main/image-18.jpg" width="25" class="rounded-circle shadow" />
                 <small class="px-2">Pinguini Tattici Nucleari • 2017 • 12 brani,<span class="opacity-50"> 53 min 20 sec.</span></small>
               </div>
             </div>
           </div>
-          <div id="mainCenter" class="bg-body-tertiary mt-3 text-decoration-none" style="--bs-bg-opacity: 0.5">
+          <div class="bg-body-tertiary mt-3 text-decoration-none" style="--bs-bg-opacity: 0.5">
             <div class="d-flex align-items-center">
               <i class="fs-1 ms-5 bi bi-play-circle text-success"></i>
               <i class="fs-5 bi bi-heart ms-4"></i>
@@ -189,7 +201,7 @@
             </div>
 
             <div class="row song-list">
-              <div class="col-12 song-item d-flex align-items-center opacity-50 pt-2 border-bottom">
+              <div class="col-12 song-item d-flex align-items-center pt-2 sticky">
                 <small class="col-1"></small>
                 <small class="col-1">#</small>
                 <small class="col-6">TITOLO</small>
@@ -264,6 +276,76 @@
                 <div class="col-1"></div>
                 <div class="col-1">10</div>
                 <div class="col-6">Only One <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
+                <div class="col-3">694,578</div>
+                <div class="col-1">1:28</div>
+              </div>
+              <div class="col-12 song-item d-flex align-items-center">
+                <div class="col-1"></div>
+                <div class="col-1">12</div>
+                <div class="col-6">Breathing <br /><small class="fw-light opacity-50">Pinguini Tattici Nucleari</small></div>
                 <div class="col-3">694,578</div>
                 <div class="col-1">1:28</div>
               </div>
