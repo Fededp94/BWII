@@ -40,44 +40,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayResults = (data) => {
     resultContainer.innerHTML = "";
     if (data && data.data && data.data.length > 0) {
-      data.data.forEach((artist) => {
-        const artistCard = document.createElement("div");
-        artistCard.className = "card mb-3";
-        artistCard.innerHTML = `
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="${artist.artist.picture_medium}" class="card-img" alt="${artist.artist.name}">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">${artist.artist.name}</h5>
-                  <p class="card-text">Album: ${artist.album.title}</p>
-                  <p class="card-text"><small class="text-muted">Canzone: ${artist.title}</small></p>
-                </div>
+      data.data.forEach((track) => {
+        const trackCard = document.createElement("div");
+        trackCard.className = "card mb-3";
+        trackCard.innerHTML = `
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="${track.artist.picture_medium}" class="card-img" alt="${track.artist.name}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${track.artist.name}</h5>
+                <p class="card-text">Album: ${track.album.title}</p>
+                <p class="card-text"><small class="text-muted">Canzone: ${track.title}</small></p>
               </div>
             </div>
-          `;
-        resultContainer.appendChild(artistCard);
+          </div>
+        `;
+        trackCard.addEventListener("click", () => playTrack(track.id));
+        resultContainer.appendChild(trackCard);
       });
     } else {
       resultContainer.innerHTML = `<p class="text-warning">Nessun risultato trovato.</p>`;
     }
   };
-});
 
-const playTrack = (trackId) => {
-  DZ.init({
-    appId: "",
-    channelUrl: "",
-    player: {
-      container: "player",
-      playlist: true,
-      width: 300,
-      height: 300,
-      format: "square",
-      onload: function () {
-        DZ.player.playTracks([trackId]);
+  const playTrack = (trackId) => {
+    DZ.init({
+      appId: "YOUR_DEEZER_APP_ID",
+      channelUrl: "YOUR_CHANNEL_URL",
+      player: {
+        container: "player",
+        playlist: true,
+        width: 300,
+        height: 300,
+        format: "square",
+        onload: function () {
+          DZ.player.playTracks([trackId]);
+        },
       },
-    },
-  });
-};
+    });
+  };
+});
