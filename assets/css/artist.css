@@ -172,7 +172,7 @@ h3 {
   bottom: 0;
   right: 0;
 }
-.vedoNonVedo {
+.playFollowMobile {
   display: none;
 }
 
@@ -223,7 +223,7 @@ h3 {
 
 /* PLAYERBAR */
 
-#play-bar {
+#player-bar {
   height: 90px;
   background-color: rgb(19, 19, 19);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
@@ -240,4 +240,43 @@ h3 {
   .progress-bar {
     color: white;
   }
+}
+
+@media screen and (max-width: 766px) {
+  .playFollowMobile {
+    display: block;
+  }
+  .cuoreAbsolute {
+    right: 20%;
+  }
+  .artistaVerificato,
+  .ascoltiMensili {
+    display: none;
+  }
+  .playFollow {
+    display: none !important;
+  }
+  .popolari {
+    order: 2;
+  }
+}
+@media screen and (max-width: 990px) {
+  .barraUtente {
+    width: 80%;
+  }
+}
+
+#prev-track-btn,
+#play-pause-btn,
+#next-track-btn {
+  background-color: transparent;
+  border: none;
+}
+.bi.bi-play-fill {
+  background-color: green;
+  border-radius: 50%;
+  padding: 10px;
+}
+.cuoreAbsolute.rounded-circle {
+  background-color: green;
 }
