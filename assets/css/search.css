@@ -141,3 +141,9 @@ body {
   transform: translateY(-50%);
   color: white;
 }
+
+/**** H2 ****/
+
+h2 {
+  font-size: x-large;
+}
