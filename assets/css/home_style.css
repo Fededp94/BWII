@@ -1,0 +1,40 @@
+body {
+  font-family: "Circular";
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  border: 0px;
+}
+.list-group-item img {
+  filter: invert(1);
+}
+.scrollable-block {
+  max-height: 49vh;
+  overflow-y: auto;
+}
+.side-title {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    display: flex;
+  }
+}
+
+/* AGGIUNTO */
+
+.custom_bg {
+  background: linear-gradient(11deg, black, transparent, transparent);
+}
+
+/* UTILITIES */
+
+.small_txt {
+  font-size: x-small;
+}
+
+.bg_two {
+  background-color: #33393f99;
+}
