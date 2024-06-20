@@ -83,12 +83,7 @@ a {
 #play-bar {
   height: 90px;
   background-color: rgb(19, 19, 19);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 55%,
-    rgba(49, 36, 36, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
 }
 
 @media screen and (min-width: 768px) {
@@ -110,11 +105,7 @@ a {
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 92vh;
-  background: linear-gradient(
-    0deg,
-    hsl(0deg 0% 7% / 42%) 0%,
-    hsl(210deg 11% 15% / 69%) 85%
-  );
+  background: linear-gradient(0deg, hsl(0deg 0% 7% / 42%) 0%, hsl(210deg 11% 15% / 69%) 85%);
 }
 
 .custom_bg {
