@@ -1,4 +1,7 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/480";
+const params = new URLSearchParams(window.location.search);
+const artistId = params.get("artistId");
+const url =
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
 const options = {
   method: "GET",
   headers: {

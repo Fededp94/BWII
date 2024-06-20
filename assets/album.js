@@ -37,9 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // aggiunge un event listener per ogni elemento nella lista delle canzoni
   songItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const songTitle = item.querySelector(".titolo-canzone").childNodes[0].nodeValue.trim();
-      const songArtist = item.querySelector(".artista-canzone").innerText.trim();
-      const songDuration = item.querySelector(".durata-canzone").innerText.trim();
+      const songTitle = item
+        .querySelector(".titolo-canzone")
+        .childNodes[0].nodeValue.trim();
+      const songArtist = item
+        .querySelector(".artista-canzone")
+        .innerText.trim();
+      const songDuration = item
+        .querySelector(".durata-canzone")
+        .innerText.trim();
 
       // aggiorrna il contenuto dell'elemento corrispondente nella barra del player
       titleSong.textContent = songTitle;
@@ -73,9 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updatePlayerBar(index) {
     const songItem = songItems[index];
-    const songTitle = songItem.querySelector(".titolo-canzone").childNodes[0].nodeValue.trim();
-    const songArtist = songItem.querySelector(".artista-canzone").innerText.trim();
-    const songDuration = songItem.querySelector(".durata-canzone").innerText.trim();
+    const songTitle = songItem
+      .querySelector(".titolo-canzone")
+      .childNodes[0].nodeValue.trim();
+    const songArtist = songItem
+      .querySelector(".artista-canzone")
+      .innerText.trim();
+    const songDuration = songItem
+      .querySelector(".durata-canzone")
+      .innerText.trim();
 
     titleSong.textContent = songTitle;
     artistSong.textContent = songArtist;
@@ -91,7 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalId);
     let [minutes, seconds] = currentDuration.textContent.split(":").map(Number);
     let currentSeconds = minutes * 60 + seconds;
-    let [totalMinutes, totalSeconds] = durationSong.textContent.split(":").map(Number);
+    let [totalMinutes, totalSeconds] = durationSong.textContent
+      .split(":")
+      .map(Number);
     const totalDurationSeconds = totalMinutes * 60 + totalSeconds;
 
     intervalId = setInterval(() => {
@@ -101,9 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSeconds++;
         const curMinutes = Math.floor(currentSeconds / 60);
         const curSeconds = currentSeconds % 60;
-        currentDuration.textContent = `${curMinutes}:${curSeconds < 10 ? "0" : ""}${curSeconds}`;
+        currentDuration.textContent = `${curMinutes}:${
+          curSeconds < 10 ? "0" : ""
+        }${curSeconds}`;
 
-        const progressPercentage = (currentSeconds / totalDurationSeconds) * 100;
+        const progressPercentage =
+          (currentSeconds / totalDurationSeconds) * 100;
         progressBar.style.width = `${progressPercentage}%`;
       }
     }, 1000);
@@ -145,7 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   previousBtn.addEventListener("click", () => {
-    currentSongIndex = (currentSongIndex - 1 + songItems.length) % songItems.length;
+    currentSongIndex =
+      (currentSongIndex - 1 + songItems.length) % songItems.length;
     updatePlayerBar(currentSongIndex);
     if (isPlaying) startPlayback();
   });
