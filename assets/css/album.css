@@ -59,9 +59,40 @@
 } */
 
 .bi.bi-play-fill {
-  background-color: rgb(77, 205, 77);
+  background-color: #1ed760;
   border-radius: 50%;
   padding: 10px;
   margin-left: 60px;
   cursor: pointer;
+}
+
+/* .song-item {
+  
+} */
+
+.song-item:hover {
+  background-color: #424e63;
+  cursor: pointer;
+}
+
+/* .progress {
+  width: 30%;
+} */
+
+.progress {
+  cursor: pointer;
+}
+
+.play-btn:hover,
+.next-btn:hover,
+.previous-btn:hover {
+  color: #868686;
+}
+
+@media (min-width: 768px) {
+  #play-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 5px;
+  }
 }
