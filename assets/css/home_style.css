@@ -123,28 +123,32 @@ a {
 
 .playlist_wrap {
   cursor: pointer;
+  .bi.bi-play-fill {
+    right: 10px;
+    display: none;
+    position: absolute;
+  }
 }
 
 .playlist_wrap:hover {
   background-color: rgb(97, 97, 97);
-  .p_playlist {
-    display: inline;
+  .bi.bi-play-fill {
+    display: inline-block;
   }
 }
 
-.p_playlist {
-  position: absolute;
-  right: 10px;
-  font-size: 50px;
-  display: none;
+.bi.bi-play-fill {
+  background-color: #1ed760;
+  border-radius: 50%;
+  padding: 10px;
 }
 
 .playIt {
-  right: 5px;
-  bottom: -5px;
   display: none;
-  text-align: center;
-  vertical-align: middle;
+}
+
+.playIt:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .card_wrap {
@@ -152,6 +156,11 @@ a {
   /* background-color: #33393f99; */
   border-radius: 10px;
   .image_wrap {
+    .playIt {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
     img {
       border-radius: 10px;
       object-fit: fill;
@@ -162,26 +171,28 @@ a {
 .card_wrap:hover {
   background-color: #33393f99;
   .playIt {
-    display: inline;
+    display: inline-block;
   }
 }
 
 footer {
-  ul {
-    padding: 0px;
+  .col {
+    ul {
+      padding: 0px;
 
-    li:first-child {
-      color: white;
-    }
-    li {
-      list-style-type: none;
-      color: grey;
-      padding-bottom: 8px;
-    }
-    li:hover {
-      color: white;
-      text-decoration: underline;
-      cursor: pointer;
+      li:first-child {
+        color: white;
+      }
+      li {
+        list-style-type: none;
+        color: grey;
+        padding-bottom: 8px;
+      }
+      li:hover {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 }

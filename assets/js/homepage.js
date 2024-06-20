@@ -9,6 +9,10 @@ const artList = [
   "jefferson airplane",
   "pink floyd",
 ];
+
+/* Salva favArt in local storage */
+
+localStorage.setItem("favoriteArtists", JSON.stringify(artList));
 /* console.log(randomArt); */
 
 const options = {
@@ -24,7 +28,12 @@ window.addEventListener("DOMContentLoaded", function () {
   const showAlbum = document.getElementById("show_album");
   const randomNumb = Math.floor(Math.random() * 11);
 
-  artList.forEach((current) => {
+  /* Carica local Storage */
+  const favArtString = localStorage.getItem("favoriteArtists");
+  const favArtList = JSON.parse(favArtString);
+  console.log(favArtList);
+
+  favArtList.forEach((current) => {
     fetch(qUrl + current, options)
       .then((response) => {
         if (response.ok) {
@@ -49,7 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
         /*  */
 
         const a_art = document.createElement("a");
-        a_art.href = `./artist.html?id=${resp.data[1].artist.id}`;
+        a_art.href = `./artist.html?artistId=${resp.data[1].artist.id}`;
         cardCol.appendChild(a_art);
 
         /*  */
@@ -74,16 +83,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
         imgWrap.appendChild(imgArt);
 
-        const playIt = document.createElement("div");
-        playIt.className = "playIt position-absolute";
+        const playIt = document.createElement("span");
+        playIt.className = "playIt";
         playIt.setAttribute("role", "button");
 
         imgWrap.appendChild(playIt);
 
-        const icPlay = document.createElement("i");
-        icPlay.className = "bi bi-play-circle-fill shadow play_color fs-1";
-
-        playIt.appendChild(icPlay);
+        playIt.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-play-fill text-black shadow-lg" viewBox="0 0 16 16">
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                </svg>`;
 
         /*  */
 
@@ -93,22 +101,19 @@ window.addEventListener("DOMContentLoaded", function () {
         card.appendChild(cardBody);
 
         const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title fs-6";
+        cardTitle.className =
+          "card-title d-flex justify-content-center d-lg-block fs-5 mt-1";
         cardTitle.innerText = resp.data[1].artist.name;
 
         cardBody.appendChild(cardTitle);
 
         const cardP = document.createElement("p");
-        cardP.className = "card-text small_txt text-muted";
+        cardP.className = "d-none d-lg-block card-text small_txt text-muted";
         cardP.innerText = "Artista";
 
         cardBody.appendChild(cardP);
 
         /*/// CREA ALBUM/// */
-
-        const albId = resp.data[randomNumb].album.id;
-        console.log("id album", albId);
-        localStorage.setItem("albid", artId);
 
         const albCol = document.createElement("div");
         albCol.className = "col";
@@ -118,7 +123,7 @@ window.addEventListener("DOMContentLoaded", function () {
         /*  */
 
         const a_album = document.createElement("a");
-        a_album.href = `./album.html?id=${resp.data[randomNumb].album.id}`;
+        a_album.href = `./album.html?albumId=${resp.data[randomNumb].album.id}`;
         albCol.appendChild(a_album);
 
         /*  */
@@ -143,16 +148,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
         imgWrapAlb.appendChild(imgArtAlb);
 
-        const playItAlb = document.createElement("div");
-        playItAlb.className = "playIt position-absolute";
+        const playItAlb = document.createElement("span");
+        playItAlb.className = "playIt";
         playItAlb.setAttribute("role", "button");
 
         imgWrapAlb.appendChild(playItAlb);
 
-        const icPlayAlb = document.createElement("i");
-        icPlayAlb.className = "bi bi-play-circle-fill shadow play_color fs-1";
-
-        playItAlb.appendChild(icPlayAlb);
+        playItAlb.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-play-fill text-black shadow-lg" viewBox="0 0 16 16">
+                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                </svg>`;
 
         /*  */
 
