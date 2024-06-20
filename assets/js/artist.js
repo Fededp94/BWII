@@ -375,7 +375,7 @@ window.onload = () => {
       console.log(err);
     });
 };
-
+//Funzione per convertire la durata dei brani
 function convertiDurata(secondi) {
   const minuti = Math.floor(secondi / 60);
   const restantiSecondi = secondi % 60;
@@ -385,9 +385,6 @@ function convertiDurata(secondi) {
   }${restantiSecondi}`;
   return durataFormattata;
 }
-
-//Funzione per convertire la durata dei brani
-//Gestione della playerbar
 
 let isFollowing = false;
 
@@ -411,3 +408,5 @@ function toggleGreen(ok) {
     ok.classList.add("green");
   }
 }
+
+//Gestione della playerbar
