@@ -23,9 +23,7 @@ window.onload = () => {
     })
 
     .then((data) => {
-      fetch(data.tracklist).then((res) => {
-        return res.json();
-      });
+      console.log(data);
 
       image.src = data.picture;
 
@@ -112,7 +110,7 @@ window.onload = () => {
         const playButtonDiv1 = document.createElement("div");
         playButtonDiv1.className =
           "d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
-        playButtonDiv1.setAttribute("onclick", "ArtistPlayer(globalPlayData)");
+
         playButtonDiv1.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg>`;
@@ -129,7 +127,7 @@ window.onload = () => {
         const playButtonDiv2 = document.createElement("div");
         playButtonDiv2.className =
           "me-3 d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
-        playButtonDiv2.setAttribute("onclick", "ArtistPlayer(globalPlayData)");
+
         playButtonDiv2.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-play-fill text-black" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg>`;
@@ -257,10 +255,6 @@ window.onload = () => {
         indiceTracksP.className =
           "col-1 d-flex justify-content-center align-items-center text-secondary indiceTracks";
         indiceTracksP.textContent = index + 1;
-        indiceTracksP.setAttribute(
-          "onclick",
-          `ArtistPlayer(globalData.data[${index}])`
-        );
 
         const playHoverTrackP = document.createElement("p");
         playHoverTrackP.className =
@@ -268,39 +262,26 @@ window.onload = () => {
         playHoverTrackP.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg>`;
-        playHoverTrackP.setAttribute(
-          "onclick",
-          `ArtistPlayer(globalData.data[${index}])`
-        );
-
         // Creazione e aggiunta ldel'elemento per l'immagine di copertina dell'album
 
         const coverImgP = document.createElement("p");
         coverImgP.className =
           "col-1 d-flex justify-content-center align-items-center";
         coverImgP.innerHTML = `<img src='${track.album.cover}' width='40' height='40'>`;
-        coverImgP.setAttribute(
-          "onclick",
-          `ArtistPlayer(globalData.data[${index}])`
-        );
-
         // Creazione e aggiunta dell'elemento per i dettagli della traccia
 
         const trackDetailsDiv = document.createElement("div");
         trackDetailsDiv.className =
           "col-8 d-md-flex justify-content-between align-items-center";
         trackDetailsDiv.innerHTML = `<p class='m-0 mb-md-3'>${track.title}</p><p class='text-secondary'>${track.rank}</p>`;
-        trackDetailsDiv.setAttribute(
-          "onclick",
-          `ArtistPlayer(globalData.data[${index}])`
-        );
-
         // Creazione e aggiunta dell'elemento per la durata della traccia
 
         const trackDurationP = document.createElement("p");
         trackDurationP.className =
           "col-2 d-none d-md-flex justify-content-center align-items-center text-secondary";
-        trackDurationP.innerHTML = `${track.duration} <span class='cuoreHover ms-2 text-white d-none'><svg onclick='toggleGreen(this)' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+        trackDurationP.innerHTML = `${convertiDurata(
+          track.duration
+        )} <span class='cuoreHover ms-2 text-white d-none'><svg onclick='toggleGreen(this)' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
           </svg></span>`;
 
@@ -389,7 +370,44 @@ window.onload = () => {
 
       fetchTracks(data.tracklist, startIndex, limit);
     })
+
     .catch((err) => {
       console.log(err);
     });
 };
+
+function convertiDurata(secondi) {
+  const minuti = Math.floor(secondi / 60);
+  const restantiSecondi = secondi % 60;
+
+  const durataFormattata = `${minuti}:${
+    restantiSecondi < 10 ? "0" : ""
+  }${restantiSecondi}`;
+  return durataFormattata;
+}
+
+//Funzione per convertire la durata dei brani
+//Gestione della playerbar
+
+let isFollowing = false;
+
+function toggleFollow() {
+  let followElements = document.getElementsByClassName("follow");
+  for (let i = 0; i < followElements.length; i++) {
+    let follow = followElements[i];
+    if (isFollowing) {
+      follow.innerHTML = "FOLLOW";
+    } else {
+      follow.innerHTML = "FOLLOWING";
+    }
+  }
+  isFollowing = !isFollowing;
+}
+
+function toggleGreen(ok) {
+  if (ok.classList.contains("green")) {
+    ok.classList.remove("green");
+  } else {
+    ok.classList.add("green");
+  }
+}
