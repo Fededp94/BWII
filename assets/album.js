@@ -1,3 +1,6 @@
+const params = new URLSearchParams(window.location.search);
+const albumId = params.get("albumId");
+
 // parte layout del titolo (rimane sopra anche se scrollassi giu)
 document.addEventListener("DOMContentLoaded", function () {
   const scrollTarget = document.getElementById("MainContentAlbum");
@@ -172,25 +175,27 @@ document.addEventListener("DOMContentLoaded", () => {
 //-----------------------------------------------
 
 // codice per rendere dinamico l'album
-document.addEventListener("DOMContentLoaded", async () => {
-  const params = new URLSearchParams(window.location.search);
-  const albumId = params.get("id");
 
+document.addEventListener("DOMContentLoaded", async () => {
   if (albumId) {
     try {
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`);
+      //fa un fetch dell'album dall'api usando l'id
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/` + albumId);
       const albumData = await response.json();
 
       // aggiorna i dettagli dell'album
       const titleAlbum = document.querySelector(".title-album");
       titleAlbum.innerText = albumData.title;
 
+      // aggiorna anche il titolo con sticky
       const albumTitleSticky = document.querySelector(".album-title-sticky");
       albumTitleSticky.innerText = albumData.title;
 
+      // aggiorna l'immagine dell'album
       const albumImage = document.querySelector(".MainContent img");
       albumImage.src = albumData.cover;
 
+      // aggiorna i dettagli nell'album
       const albumInfoContainer = document.querySelector(".MainContent .d-flex.align-items-center.small");
       albumInfoContainer.innerHTML = ""; // pulisce l'album esistente
 
@@ -208,7 +213,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       albumInfoContainer.appendChild(artistImg);
       albumInfoContainer.appendChild(albumInfoText);
 
-      // aggiorna la lista
+      // aggiorna la lista delle canzoni
       const songListElement = document.querySelector(".song-list");
       songListElement.innerHTML = ""; // pulisce le canzoni esistenti
 
@@ -251,6 +256,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         trackElement.appendChild(col4);
         trackElement.appendChild(col5);
 
+        // aggiunge un event listener per aggiornare la plyerbar
         trackElement.addEventListener("click", () => {
           document.querySelector(".title-song").innerText = track.title;
           document.querySelector(".artist-song").innerText = track.artist.name;

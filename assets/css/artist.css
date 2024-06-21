@@ -90,11 +90,12 @@ h3 {
 }
 #side-scroll a,
 a {
-#side-scroll a,
-a {
-  text-decoration: none;
-  color: white;
-  color: white;
+  #side-scroll a,
+  a {
+    text-decoration: none;
+    color: white;
+    color: white;
+  }
 }
 
 /* NAVBAR SINISTRA */
@@ -249,25 +250,21 @@ h3 {
 #player-bar {
   height: 90px;
   background-color: rgb(19, 19, 19);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 55%,
-    rgba(49, 36, 36, 0) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
 }
 
 @media screen and (min-width: 768px) {
   #player-bar {
-  #player-bar {
-    background-color: rgb(19, 19, 19);
+    #player-bar {
+      background-color: rgb(19, 19, 19);
+    }
   }
-}
-.progress {
-  height: 3px;
+  .progress {
+    height: 3px;
 
-  .progress-bar {
-    color: white;
+    .progress-bar {
+      color: white;
+    }
   }
 }
 
