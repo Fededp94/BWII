@@ -26,19 +26,6 @@ const options = {
 /* CREAZIONE DINAMICA CARDS */
 
 window.addEventListener("DOMContentLoaded", function () {
-  /* CREA FUNZIONE BOTTONI PLAYIT */
-
-  /* seleziono bottoni playIt */
-  /*  const playBtn = document.querySelectorAll(".playIt");
-
-  playBtn.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      alert("PLAY IT!");
-    });
-  }); */
-
   /* FETCH CREAZIONE E DINAMICA CARDS */
   const showArt = document.getElementById("show_art");
   const showAlbum = document.getElementById("show_album");
