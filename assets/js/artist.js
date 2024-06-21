@@ -55,6 +55,7 @@ window.onload = () => {
           </svg>&nbsp;Artista verificato`;
 
         const h1 = document.createElement("h1");
+        h1.className = "Artista";
         h1.textContent = data.name;
 
         const ascoltiMensiliP = document.createElement("p");
@@ -270,13 +271,13 @@ window.onload = () => {
         const coverImgP = document.createElement("p");
         coverImgP.className =
           "col-1 d-flex justify-content-center align-items-center";
-        coverImgP.innerHTML = `<img src='${track.album.cover}' width='40' height='40'>`;
+        coverImgP.innerHTML = `<img src='${track.album.cover}' width='40' height='40' id="albumImg">`;
         // Creazione e aggiunta dell'elemento per i dettagli della traccia
 
         const trackDetailsDiv = document.createElement("div");
         trackDetailsDiv.className =
-          "col-8 d-md-flex justify-content-between align-items-center";
-        trackDetailsDiv.innerHTML = `<p class='m-0 mb-md-3'>${track.title}</p><p class='text-secondary'>${track.rank}</p>`;
+          "col-8 d-md-flex justify-content-between align-items-center Traccia";
+        trackDetailsDiv.innerHTML = `<p class='m-0 mb-md-3 Titolo'>${track.title}</p><p class='text-secondary'>${track.rank}</p>`;
         // Creazione e aggiunta dell'elemento per la durata della traccia
 
         const trackDurationP = document.createElement("p");
@@ -332,6 +333,14 @@ window.onload = () => {
             const trackElement = createTrackElement(data.data[i], i);
             trackDiv.appendChild(trackElement);
           }
+          /*      trackElement.addEventListener("click", () => {
+              document.querySelector(".title-song").innerText =
+                console.log(trackDiv);
+              document.querySelector(".artist-song").innerText =
+                data.artist.name;
+
+              document.querySelector(".image-song").src = albumData.cover; // aggiorna l'immagine nella playerbar
+            }); */
 
           // Rimuovere il link "Visualizza altro/meno"
 
@@ -366,11 +375,11 @@ window.onload = () => {
             });
             trackDiv.appendChild(viewMoreDiv);
           }
+          //Funzione per far apparire le info nella playerbar
         } catch (err) {
           console.log(err);
         }
       }
-
       fetchTracks(data.tracklist, startIndex, limit);
     })
 
