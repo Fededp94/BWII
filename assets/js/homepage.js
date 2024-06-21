@@ -23,7 +23,23 @@ const options = {
   },
 };
 
+/* CREAZIONE DINAMICA CARDS */
+
 window.addEventListener("DOMContentLoaded", function () {
+  /* CREA FUNZIONE BOTTONI PLAYIT */
+
+  /* seleziono bottoni playIt */
+  /*  const playBtn = document.querySelectorAll(".playIt");
+
+  playBtn.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      alert("PLAY IT!");
+    });
+  }); */
+
+  /* FETCH CREAZIONE E DINAMICA CARDS */
   const showArt = document.getElementById("show_art");
   const showAlbum = document.getElementById("show_album");
   const randomNumb = Math.floor(Math.random() * 11);
@@ -65,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         const card = document.createElement("div");
         card.className = "card_wrap border-0 p-2";
-        card.setAttribute("role", "button");
+        /* card.setAttribute("role", "button"); */
 
         a_art.appendChild(card);
 
@@ -130,7 +146,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         const card_a = document.createElement("div");
         card_a.className = "card_wrap";
-        card_a.setAttribute("role", "button");
+        /* card_a.setAttribute("role", "button"); */
 
         a_album.appendChild(card_a);
 

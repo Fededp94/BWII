@@ -175,27 +175,51 @@ a {
   }
 }
 
-footer {
-  .col {
-    ul {
-      padding: 0px;
-
-      li:first-child {
-        color: white;
-      }
-      li {
-        list-style-type: none;
-        color: grey;
-        padding-bottom: 8px;
-      }
-      li:hover {
-        color: white;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    }
+footer ul {
+  padding: 0px;
+  li {
+    list-style-type: none;
+    color: grey;
+    padding-bottom: 8px;
+  }
+  li:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
+
+.last_div {
+  li {
+    padding: 5px;
+    display: inline;
+  }
+}
+
+footer p:last-of-type {
+  white-space: nowrap;
+}
+
+.social_icon {
+  white-space: nowrap;
+}
+/* ul {
+  padding: 0px;
+
+  li:first-child {
+    color: white;
+  }
+  li {
+    list-style-type: none;
+    color: grey;
+    padding-bottom: 8px;
+  }
+  li:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+} */
 /* UTILITIES */
 
 .xsmall_txt {
