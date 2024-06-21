@@ -1,6 +1,8 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -21,8 +23,24 @@ i {
 
 /* SCROLLBAR */
 
+.bg-black2 {
+  background-color: rgb(19, 19, 19);
+}
+
+i {
+  cursor: pointer;
+}
+
+.custom-padding {
+  padding-bottom: 8rem;
+}
+
+/* SCROLLBAR */
+
 ::-webkit-scrollbar {
   background-color: transparent;
+  width: 0.7rem;
+  height: 0.2rem;
   width: 0.7rem;
   height: 0.2rem;
 }
@@ -72,9 +90,14 @@ h3 {
 }
 #side-scroll a,
 a {
+#side-scroll a,
+a {
   text-decoration: none;
   color: white;
+  color: white;
 }
+
+/* NAVBAR SINISTRA */
 
 /* NAVBAR SINISTRA */
 
@@ -226,10 +249,16 @@ h3 {
 #player-bar {
   height: 90px;
   background-color: rgb(19, 19, 19);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(49, 36, 36, 0) 100%
+  );
 }
 
 @media screen and (min-width: 768px) {
+  #player-bar {
   #player-bar {
     background-color: rgb(19, 19, 19);
   }
