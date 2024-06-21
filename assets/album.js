@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
       const albumData = await response.json();
 
-      // aggiorna il titolo dell'album
+      // Update the album title
       const titleAlbum = document.querySelector(".title-album");
       titleAlbum.innerText = albumData.title;
 
