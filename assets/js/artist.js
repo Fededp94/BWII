@@ -1,7 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const artistId = params.get("artistId");
-const url =
-  "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
+const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId;
 const options = {
   method: "GET",
   headers: {
@@ -77,8 +76,7 @@ window.onload = () => {
         playFollowMobileDiv2.className = "playFollowMobile";
 
         const innerDiv1 = document.createElement("div");
-        innerDiv1.className =
-          "d-flex justify-content-between align-items-center p-3 pb-0";
+        innerDiv1.className = "d-flex justify-content-between align-items-center p-3 pb-0";
 
         const innerDiv2 = document.createElement("div");
         innerDiv2.className = "d-flex align-items-center";
@@ -103,16 +101,14 @@ window.onload = () => {
         innerDiv2.appendChild(dropdownDiv1);
 
         const innerDiv3 = document.createElement("div");
-        innerDiv3.className =
-          "d-flex justify-content-center align-items-center me-2";
+        innerDiv3.className = "d-flex justify-content-center align-items-center me-2";
         innerDiv3.innerHTML = `<svg  onclick='toggleGreen(this)' xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shuffle me-3" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
             <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
           </svg>`;
 
         const playButtonDiv1 = document.createElement("div");
-        playButtonDiv1.className =
-          "d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
+        playButtonDiv1.className = "d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
 
         playButtonDiv1.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
@@ -124,12 +120,10 @@ window.onload = () => {
         playFollowMobileDiv2.appendChild(innerDiv1);
 
         const playFollowDiv = document.createElement("div");
-        playFollowDiv.className =
-          "playFollow d-flex align-items-center p-5 pb-0";
+        playFollowDiv.className = "playFollow d-flex align-items-center p-5 pb-0";
 
         const playButtonDiv2 = document.createElement("div");
-        playButtonDiv2.className =
-          "me-3 d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
+        playButtonDiv2.className = "me-3 d-flex justify-content-center align-items-center p-2 rounded-circle playButtonHover";
 
         playButtonDiv2.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-play-fill text-black" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
@@ -182,8 +176,7 @@ window.onload = () => {
         braniInnerDiv.className = "row";
 
         const cuoreDiv = document.createElement("div");
-        cuoreDiv.className =
-          "col-3 p-0 d-flex justify-content-center cuoreRelative";
+        cuoreDiv.className = "col-3 p-0 d-flex justify-content-center cuoreRelative";
 
         const immagineCanvasImg = document.createElement("img");
         immagineCanvasImg.id = "immagineCanvas";
@@ -202,8 +195,7 @@ window.onload = () => {
         cuoreDiv.appendChild(cuoreAbsoluteDiv);
 
         const braniInnerDiv2 = document.createElement("div");
-        braniInnerDiv2.className =
-          "col-9 d-flex flex-column justify-content-center ps-3";
+        braniInnerDiv2.className = "col-9 d-flex flex-column justify-content-center ps-3";
 
         const braniP1 = document.createElement("p");
         braniP1.className = "mb-1";
@@ -255,33 +247,28 @@ window.onload = () => {
         //Creazione e aggiunta dell'elemento per l'indice della traccia
 
         const indiceTracksP = document.createElement("p");
-        indiceTracksP.className =
-          "col-1 d-flex justify-content-center align-items-center text-secondary indiceTracks";
+        indiceTracksP.className = "col-1 d-flex justify-content-center align-items-center text-secondary indiceTracks";
         indiceTracksP.textContent = index + 1;
 
         const playHoverTrackP = document.createElement("p");
-        playHoverTrackP.className =
-          "col-1 d-none justify-content-center align-items-center text-secondary playHoverTrack";
+        playHoverTrackP.className = "col-1 d-none justify-content-center align-items-center text-secondary playHoverTrack";
         playHoverTrackP.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg>`;
         // Creazione e aggiunta ldel'elemento per l'immagine di copertina dell'album
 
         const coverImgP = document.createElement("p");
-        coverImgP.className =
-          "col-1 d-flex justify-content-center align-items-center";
+        coverImgP.className = "col-1 d-flex justify-content-center align-items-center";
         coverImgP.innerHTML = `<img src='${track.album.cover}' width='40' height='40'>`;
         // Creazione e aggiunta dell'elemento per i dettagli della traccia
 
         const trackDetailsDiv = document.createElement("div");
-        trackDetailsDiv.className =
-          "col-8 d-md-flex justify-content-between align-items-center";
+        trackDetailsDiv.className = "col-8 d-md-flex justify-content-between align-items-center";
         trackDetailsDiv.innerHTML = `<p class='m-0 mb-md-3'>${track.title}</p><p class='text-secondary'>${track.rank}</p>`;
         // Creazione e aggiunta dell'elemento per la durata della traccia
 
         const trackDurationP = document.createElement("p");
-        trackDurationP.className =
-          "col-2 d-none d-md-flex justify-content-center align-items-center text-secondary";
+        trackDurationP.className = "col-2 d-none d-md-flex justify-content-center align-items-center text-secondary";
         trackDurationP.innerHTML = `${convertiDurata(
           track.duration
         )} <span class='cuoreHover ms-2 text-white d-none'><svg onclick='toggleGreen(this)' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -342,9 +329,7 @@ window.onload = () => {
 
           if (endIndex < data.data.length || isShowingMore) {
             const viewMoreDiv = document.createElement("div");
-            viewMoreDiv.innerHTML = `<a href="#" id="viewMoreLink">${
-              isShowingMore ? "Visualizza meno" : "Visualizza altro"
-            }</a>`;
+            viewMoreDiv.innerHTML = `<a href="#" id="viewMoreLink">${isShowingMore ? "Visualizza meno" : "Visualizza altro"}</a>`;
             viewMoreDiv.addEventListener("click", (event) => {
               event.preventDefault();
               if (isShowingMore) {
@@ -355,13 +340,11 @@ window.onload = () => {
                   }
                 }
                 isShowingMore = false;
-                viewMoreDiv.innerHTML =
-                  '<a href="#" id="viewMoreLink">Visualizza altro</a>';
+                viewMoreDiv.innerHTML = '<a href="#" id="viewMoreLink">Visualizza altro</a>';
               } else {
                 fetchTracks(url, endIndex, limit);
                 isShowingMore = true;
-                viewMoreDiv.innerHTML =
-                  '<a href="#" id="viewMoreLink">Visualizza meno</a>';
+                viewMoreDiv.innerHTML = '<a href="#" id="viewMoreLink">Visualizza meno</a>';
               }
             });
             trackDiv.appendChild(viewMoreDiv);
@@ -383,9 +366,7 @@ function convertiDurata(secondi) {
   const minuti = Math.floor(secondi / 60);
   const restantiSecondi = secondi % 60;
 
-  const durataFormattata = `${minuti}:${
-    restantiSecondi < 10 ? "0" : ""
-  }${restantiSecondi}`;
+  const durataFormattata = `${minuti}:${restantiSecondi < 10 ? "0" : ""}${restantiSecondi}`;
   return durataFormattata;
 }
 
