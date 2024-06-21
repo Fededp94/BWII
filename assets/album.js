@@ -1,20 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollTarget = document.getElementById("MainContentAlbum");
-  const controlBar = document.querySelector(".barraUtente");
-
-  const fixedTitle = document.createElement("div");
-  fixedTitle.className = "title-album-fixed";
-  controlBar.appendChild(fixedTitle);
-
-  scrollTarget.addEventListener("scroll", function () {
-    if (scrollTarget.scrollTop > 270) {
-      fixedTitle.classList.add("show");
-    } else {
-      fixedTitle.classList.remove("show");
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   const albumId = params.get("albumId");
@@ -27,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
       const albumData = await response.json();
 
-      // Update the album title
+      // aggiorna il titolo dell'album
       const titleAlbum = document.querySelector(".title-album");
       titleAlbum.innerText = albumData.title;
 
@@ -97,6 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.querySelector(".duration-song").innerText = `${Math.floor(track.duration / 60)}:${track.duration % 60 < 10 ? "0" : ""}${
             track.duration % 60
           }`;
+          document.querySelector(".image-song").src = albumData.cover; // Update the song image in the player bar
         });
 
         songListElement.appendChild(trackElement);
@@ -108,6 +92,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("No album ID found in the URL parameters");
   }
 });
+
+// ------------------- PLAYER BAR -------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const songItems = document.querySelectorAll(".song-item");
   const titleSong = document.querySelector(".title-song");
@@ -223,6 +209,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePlayerBar(currentSongIndex);
   // setVolume(volumeLevel);
 });
+
+// --------------------- TITOLO STICKY -----------------------
 document.addEventListener("DOMContentLoaded", function () {
   const scrollTarget = document.getElementById("MainContentAlbum");
   const albumTitle = document.querySelector(".title-album").innerHTML;
