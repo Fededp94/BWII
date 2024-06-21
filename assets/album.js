@@ -40,9 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // aggiunge un event listener per ogni elemento nella lista delle canzoni
   songItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const songTitle = item.querySelector(".titolo-canzone").childNodes[0].nodeValue.trim();
-      const songArtist = item.querySelector(".artista-canzone").innerText.trim();
-      const songDuration = item.querySelector(".durata-canzone").innerText.trim();
+      const songTitle = item
+        .querySelector(".titolo-canzone")
+        .childNodes[0].nodeValue.trim();
+      const songArtist = item
+        .querySelector(".artista-canzone")
+        .innerText.trim();
+      const songDuration = item
+        .querySelector(".durata-canzone")
+        .innerText.trim();
 
       // aggiorrna il contenuto dell'elemento corrispondente nella barra del player
       titleSong.innerText = songTitle;
@@ -76,9 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updatePlayerBar(index) {
     const songItem = songItems[index];
-    const songTitle = songItem.querySelector(".titolo-canzone").childNodes[0].nodeValue.trim();
-    const songArtist = songItem.querySelector(".artista-canzone").innerText.trim();
-    const songDuration = songItem.querySelector(".durata-canzone").innerText.trim();
+    const songTitle = songItem
+      .querySelector(".titolo-canzone")
+      .childNodes[0].nodeValue.trim();
+    const songArtist = songItem
+      .querySelector(".artista-canzone")
+      .innerText.trim();
+    const songDuration = songItem
+      .querySelector(".durata-canzone")
+      .innerText.trim();
 
     titleSong.innerText = songTitle;
     artistSong.innerText = songArtist;
@@ -94,7 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalId);
     let [minutes, seconds] = currentDuration.innerText.split(":").map(Number);
     let currentSeconds = minutes * 60 + seconds;
-    let [totalMinutes, totalSeconds] = durationSong.innerText.split(":").map(Number);
+    let [totalMinutes, totalSeconds] = durationSong.innerText
+      .split(":")
+      .map(Number);
     const totalDurationSeconds = totalMinutes * 60 + totalSeconds;
 
     intervalId = setInterval(() => {
@@ -104,9 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSeconds++;
         const curMinutes = Math.floor(currentSeconds / 60);
         const curSeconds = currentSeconds % 60;
-        currentDuration.innerText = `${curMinutes}:${curSeconds < 10 ? "0" : ""}${curSeconds}`;
+        currentDuration.innerText = `${curMinutes}:${
+          curSeconds < 10 ? "0" : ""
+        }${curSeconds}`;
 
-        const progressPercentage = (currentSeconds / totalDurationSeconds) * 100;
+        const progressPercentage =
+          (currentSeconds / totalDurationSeconds) * 100;
         progressBar.style.width = `${progressPercentage}%`;
       }
     }, 1000);
@@ -148,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   previousBtn.addEventListener("click", () => {
-    currentSongIndex = (currentSongIndex - 1 + songItems.length) % songItems.length;
+    currentSongIndex =
+      (currentSongIndex - 1 + songItems.length) % songItems.length;
     updatePlayerBar(currentSongIndex);
     if (isPlaying) startPlayback();
   });
@@ -180,7 +198,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (albumId) {
     try {
       //fa un fetch dell'album dall'api usando l'id
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/` + albumId);
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/deezer/album/` + albumId
+      );
       const albumData = await response.json();
 
       // aggiorna i dettagli dell'album
@@ -196,7 +216,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       albumImage.src = albumData.cover;
 
       // aggiorna i dettagli nell'album
-      const albumInfoContainer = document.querySelector(".MainContent .d-flex.align-items-center.small");
+      const albumInfoContainer = document.querySelector(
+        ".MainContent .d-flex.align-items-center.small"
+      );
       albumInfoContainer.innerHTML = ""; // pulisce l'album esistente
 
       const artistImg = document.createElement("img");
@@ -206,9 +228,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const albumInfoText = document.createElement("small");
       albumInfoText.classList.add("px-2");
-      albumInfoText.innerText = `${albumData.artist.name} • ${new Date(albumData.release_date).getFullYear()} • ${
-        albumData.nb_tracks
-      } brani, ${Math.floor(albumData.duration / 60)} min ${albumData.duration % 60} sec.`;
+      albumInfoText.innerText = `${albumData.artist.name} • ${new Date(
+        albumData.release_date
+      ).getFullYear()} • ${albumData.nb_tracks} brani, ${Math.floor(
+        albumData.duration / 60
+      )} min ${albumData.duration % 60} sec.`;
 
       albumInfoContainer.appendChild(artistImg);
       albumInfoContainer.appendChild(albumInfoText);
@@ -219,7 +243,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       albumData.tracks.data.forEach((track, index) => {
         const trackElement = document.createElement("div");
-        trackElement.classList.add("col-12", "song-item", "d-flex", "align-items-center", "mt-3");
+        trackElement.classList.add(
+          "col-12",
+          "song-item",
+          "d-flex",
+          "align-items-center",
+          "mt-3"
+        );
 
         const col1 = document.createElement("div");
         col1.classList.add("col-1");
@@ -248,7 +278,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const col5 = document.createElement("div");
         col5.classList.add("col-1", "durata-canzone");
-        col5.innerText = `${Math.floor(track.duration / 60)}:${track.duration % 60 < 10 ? "0" : ""}${track.duration % 60}`;
+        col5.innerText = `${Math.floor(track.duration / 60)}:${
+          track.duration % 60 < 10 ? "0" : ""
+        }${track.duration % 60}`;
 
         trackElement.appendChild(col1);
         trackElement.appendChild(col2);
@@ -260,9 +292,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         trackElement.addEventListener("click", () => {
           document.querySelector(".title-song").innerText = track.title;
           document.querySelector(".artist-song").innerText = track.artist.name;
-          document.querySelector(".duration-song").innerText = `${Math.floor(track.duration / 60)}:${track.duration % 60 < 10 ? "0" : ""}${
-            track.duration % 60
-          }`;
+          document.querySelector(".duration-song").innerText = `${Math.floor(
+            track.duration / 60
+          )}:${track.duration % 60 < 10 ? "0" : ""}${track.duration % 60}`;
         });
 
         songListElement.appendChild(trackElement);
