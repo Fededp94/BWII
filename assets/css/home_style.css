@@ -2,6 +2,7 @@ body {
   font-family: "Circular";
 }
 
+<<<<<<< Updated upstream
 html {
   overflow-y: hidden;
   overflow-x: hidden;
@@ -124,11 +125,36 @@ a {
     transition: background-color 300ms;
   }
 }
+=======
+.list-group-item {
+  display: flex;
+  align-items: center;
+  border: 0px;
+}
+.list-group-item img {
+  filter: invert(1);
+}
+.scrollable-block {
+  max-height: 49vh;
+  overflow-y: auto;
+}
+.side-title {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    display: flex;
+  }
+}
+
+/* AGGIUNTO */
+>>>>>>> Stashed changes
 
 .custom_bg {
   background: linear-gradient(11deg, black, transparent, transparent);
 }
 
+<<<<<<< Updated upstream
 .playlist_wrap {
   cursor: pointer;
   .bi.bi-play-fill {
@@ -236,12 +262,21 @@ footer p:last-of-type {
 
 .small_txt {
   font-size: small;
+=======
+/* UTILITIES */
+
+.small_txt {
+  font-size: x-small;
+>>>>>>> Stashed changes
 }
 
 .bg_two {
   background-color: #33393f99;
 }
+<<<<<<< Updated upstream
 
 .play_color {
   color: #1ed760;
 }
+=======
+>>>>>>> Stashed changes
