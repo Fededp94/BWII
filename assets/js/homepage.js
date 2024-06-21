@@ -29,16 +29,15 @@ window.addEventListener("DOMContentLoaded", function () {
   /* CREA FUNZIONE BOTTONI PLAYIT */
 
   /* seleziono bottoni playIt */
-  const playBtn = document.querySelectorAll(".playIt");
+  /*  const playBtn = document.querySelectorAll(".playIt");
 
   playBtn.forEach((button) => {
     button.addEventListener("click", function (event) {
       event.preventDefault();
       event.stopPropagation();
-      console.log(eventTarget);
       alert("PLAY IT!");
     });
-  });
+  }); */
 
   /* FETCH CREAZIONE E DINAMICA CARDS */
   const showArt = document.getElementById("show_art");
