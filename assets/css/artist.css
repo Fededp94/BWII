@@ -258,3 +258,16 @@ h3 {
 .cuoreAbsolute.rounded-circle {
   background-color: #1ed760;
 }
+@media screen and (min-width: 768px) {
+  #player-bar {
+    background: black;
+  }
+}
+.bg-spotify {
+  background-color: #121212;
+}
+.song-fixed-player {
+  left: 16px;
+  bottom: 90px;
+  width: 94vw;
+}
