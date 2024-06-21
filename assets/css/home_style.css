@@ -80,7 +80,7 @@ a {
 
 /* PLAYERBAR */
 
-#play-bar {
+#player-bar {
   height: 90px;
   background-color: rgb(19, 19, 19);
   background: linear-gradient(
@@ -115,6 +115,23 @@ a {
     hsl(0deg 0% 7% / 42%) 0%,
     hsl(210deg 11% 15% / 69%) 85%
   );
+}
+
+/* BARRA UTENTE */
+
+.barraUtente {
+  z-index: 2;
+  position: fixed;
+  width: 57%;
+  .dropdown {
+    top: 0 !important;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 300ms;
+  }
 }
 
 .custom_bg {
