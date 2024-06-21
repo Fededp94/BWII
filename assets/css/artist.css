@@ -1,12 +1,17 @@
 html {
+<<<<<<< Updated upstream
   overflow-y: hidden;
   overflow-x: hidden;
+=======
+  overflow: hidden;
+>>>>>>> Stashed changes
 }
 
 body {
   font-family: "Circular";
 }
 
+<<<<<<< Updated upstream
 .bg-black2 {
   background-color: rgb(19, 19, 19);
 }
@@ -25,6 +30,11 @@ i {
   background-color: transparent;
   width: 0.7rem;
   height: 0.2rem;
+=======
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.8rem;
+>>>>>>> Stashed changes
 }
 
 ::-webkit-scrollbar-thumb {
@@ -70,6 +80,7 @@ h3 {
 #side-scroll ul > li {
   list-style-type: none;
 }
+<<<<<<< Updated upstream
 #side-scroll a,
 a {
   text-decoration: none;
@@ -78,6 +89,12 @@ a {
 
 /* NAVBAR SINISTRA */
 
+=======
+#side-scroll a {
+  text-decoration: none;
+}
+
+>>>>>>> Stashed changes
 nav ul > li {
   list-style-type: none;
 }
@@ -95,6 +112,7 @@ nav i {
   font-size: 13px;
 }
 
+<<<<<<< Updated upstream
 /* PARTE CENTRALE */
 
 #main-scroll {
@@ -224,11 +242,15 @@ h3 {
 /* PLAYERBAR */
 
 #player-bar {
+=======
+#play-bar {
+>>>>>>> Stashed changes
   height: 90px;
   background-color: rgb(19, 19, 19);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
 }
 
+<<<<<<< Updated upstream
 @media screen and (min-width: 768px) {
   #player-bar {
     background-color: rgb(19, 19, 19);
@@ -280,3 +302,13 @@ h3 {
 .cuoreAbsolute.rounded-circle {
   background-color: green;
 }
+=======
+i {
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  #play-bar {
+    background-color: rgb(19, 19, 19);
+  }
+}
+>>>>>>> Stashed changes
