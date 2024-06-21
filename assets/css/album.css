@@ -38,7 +38,7 @@
 .title-album-fixed {
   display: none;
   position: absolute;
-  left: 22%;
+  left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
   color: white;
