@@ -1,0 +1,90 @@
+.progress {
+  height: 3px;
+
+  .progress-bar {
+    color: white;
+  }
+}
+
+#MainContentAlbum {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 94vh;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #212b3c;
+  /* #212b3c */
+}
+
+.sticky1 {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background-color: #283851;
+  /* padding-bottom: 1rem; */
+}
+
+/* .barraUtente {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+} */
+
+.title-album-fixed {
+  display: none;
+  position: absolute;
+  left: 22%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: white;
+}
+
+.title-album-fixed.show {
+  display: block;
+}
+
+/* .play-button {
+  font-size: 24px;
+  cursor: pointer; 
+  color: white; 
+}
+
+.play-button.show {
+  display: inline-block; 
+} */
+
+.bi.bi-play-fill {
+  background-color: #1ed760;
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+/* .song-item {
+  
+} */
+
+.song-item:hover {
+  background-color: #424e63;
+  cursor: pointer;
+}
+
+/* .progress {
+  width: 30%;
+} */
+
+.progress {
+  cursor: pointer;
+}
+
+.play-btn:hover,
+.next-btn:hover,
+.previous-btn:hover {
+  color: #868686;
+}
