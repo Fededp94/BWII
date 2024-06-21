@@ -197,3 +197,5 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePlayerBar(currentSongIndex);
   // setVolume(volumeLevel);
 });
+
+// ciao
