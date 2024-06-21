@@ -3,9 +3,6 @@ html {
   overflow-x: hidden;
   overflow-y: hidden;
   overflow-x: hidden;
-=======
-  overflow: hidden;
->>>>>>> Stashed changes
 }
 
 body {
@@ -91,7 +88,6 @@ nav i {
   font-size: 13px;
 }
 
-<<<<<<< Updated upstream
 /* PARTE CENTRALE */
 
 #main-scroll {
@@ -221,15 +217,11 @@ h3 {
 /* PLAYERBAR */
 
 #player-bar {
-=======
-#play-bar {
->>>>>>> Stashed changes
   height: 90px;
   background-color: rgb(19, 19, 19);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(49, 36, 36, 0) 100%);
 }
 
-<<<<<<< Updated upstream
 @media screen and (min-width: 768px) {
   #player-bar {
     #player-bar {
