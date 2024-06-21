@@ -86,11 +86,11 @@
 .play-btn:hover,
 .next-btn:hover,
 .previous-btn:hover {
-  color: #141414;
+  color: #bcbbbb;
 }
 
 .bg-spotify {
-  background-color: #121212;
+  background-color: #5d5d5d;
 }
 .song-fixed-player {
   left: 16px;
