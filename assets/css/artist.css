@@ -51,38 +51,7 @@ i {
 
 #side-scroll {
   overflow-y: scroll;
-  max-height: 60vh;
-}
-
-.custom-padding {
-  padding-bottom: 8rem;
-}
-
-.sideIconsRx {
-  color: #585858;
-}
-
-.siderbarRx {
-  height: 100vh;
-  background-color: rgb(19, 19, 19);
-}
-.custom-right-side {
-  /* padding: 0.5em !important; */
-  font-size: 0.8em;
-}
-.siderbarRx .bg-black {
-  height: 100%;
-}
-.bg-black2 {
-  background-color: rgb(19, 19, 19);
-}
-h3 {
-  color: white;
-  font-size: 1.2em;
-}
-
-.imgFriends1 {
-  border-radius: 20px;
+  max-height: 76vh;
 }
 
 #side-scroll ul > li {
@@ -262,9 +231,8 @@ h3 {
   .progress {
     height: 3px;
 
-    .progress-bar {
-      color: white;
-    }
+  .progress-bar {
+    color: white;
   }
 }
 
@@ -299,10 +267,10 @@ h3 {
   border: none;
 }
 .bi.bi-play-fill {
-  background-color: green;
+  background-color: #1ed760;
   border-radius: 50%;
   padding: 10px;
 }
 .cuoreAbsolute.rounded-circle {
-  background-color: green;
+  background-color: #1ed760;
 }
